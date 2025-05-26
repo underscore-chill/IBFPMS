@@ -3,13 +3,10 @@ window.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname.split("/").pop(); // Get current file name
   links.forEach((link) => {
     const linkPage = link.getAttribute("href").split("/").pop();
-    console.log(linkPage);
-    console.log(currentPage);
     if (linkPage == currentPage) {
       if (window.innerWidth <= 700) {
         link.classList.add("text-primary");
       } else {
-        console.log(link);
         if (link.classList.contains("text-white")) {
           link.classList.remove("text-white");
         }
@@ -19,7 +16,6 @@ window.addEventListener("DOMContentLoaded", () => {
           "bg-transparent",
           "text-black"
         );
-        console.log(link);
       }
     } else {
       if (window.innerWidth <= 700) {
@@ -31,6 +27,98 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// Form submission handling
+const careerForm = document.getElementById("career-form");
+const formSuccess = document.getElementById("form-success");
+
+careerForm?.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Validate form
+  const formData = new FormData(careerForm);
+  const resume = formData.get("resume");
+
+  // Check if resume is PDF
+  if (resume && resume.type !== "application/pdf") {
+    alert("Please upload a PDF file for your resume.");
+    return;
+  }
+
+  // Show success message
+  formSuccess.classList.remove("hidden");
+  careerForm.reset();
+
+  // Scroll to success message
+  formSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
+
+  // Hide success message after 10 seconds
+  setTimeout(() => {
+    formSuccess.classList.add("hidden");
+  }, 10000);
+});
+
+// File upload validation
+const resumeInput = document.getElementById("resume");
+resumeInput?.addEventListener("change", function (e) {
+  const file = e.target.files[0];
+  if (file && file.type !== "application/pdf") {
+    alert("Please select a PDF file only.");
+    e.target.value = "";
+  }
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  });
+});
+
+// Add scroll animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px",
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+}, observerOptions);
+
+// Apply animation to cards and sections
+document
+  .querySelectorAll(".grid > div, section > div")
+  .forEach((element, index) => {
+    element.style.opacity = "0";
+    element.style.transform = "translateY(30px)";
+    element.style.transition = `opacity 0.8s ease ${
+      index * 0.1
+    }s, transform 0.8s ease ${index * 0.1}s`;
+    observer.observe(element);
+  });
+
+// Form field focus animations
+document.querySelectorAll("input, select, textarea").forEach((field) => {
+  field.addEventListener("focus", function () {
+    this.parentElement.classList.add("transform", "scale-105");
+  });
+
+  field.addEventListener("blur", function () {
+    this.parentElement.classList.remove("transform", "scale-105");
+  });
+});
+
 // Hero Slider Functionality
 class HeroSlider {
   constructor() {
@@ -145,10 +233,10 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
 // Newsletter subscription
 const newsletterForm = document.querySelector("section.bg-primary .flex");
-const emailInput = newsletterForm.querySelector('input[type="email"]');
-const subscribeButton = newsletterForm.querySelector("button");
+const emailInput = newsletterForm?.querySelector('input[type="email"]');
+const subscribeButton = newsletterForm?.querySelector("button");
 
-subscribeButton.addEventListener("click", (e) => {
+subscribeButton?.addEventListener("click", (e) => {
   e.preventDefault();
   const email = emailInput.value.trim();
 
@@ -176,19 +264,19 @@ window.addEventListener("scroll", () => {
 });
 
 // Animate service cards on scroll
-const observerOptions = {
+const observerOptions2 = {
   threshold: 0.1,
   rootMargin: "0px 0px -50px 0px",
 };
 
-const observer = new IntersectionObserver((entries) => {
+const observer2 = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.style.opacity = "1";
       entry.target.style.transform = "translateY(0)";
     }
   });
-}, observerOptions);
+}, observerOptions2);
 
 // Apply animation to service cards
 document.querySelectorAll(".grid > div").forEach((card, index) => {
@@ -197,7 +285,7 @@ document.querySelectorAll(".grid > div").forEach((card, index) => {
   card.style.transition = `opacity 0.6s ease ${
     index * 0.1
   }s, transform 0.6s ease ${index * 0.1}s`;
-  observer.observe(card);
+  observer2.observe(card);
 });
 
 // Contact form submission
