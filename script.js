@@ -104,20 +104,11 @@ document
     element.style.transform = "translateY(30px)";
     element.style.transition = `opacity 0.8s ease ${
       index * 0.1
-    }s, transform 0.8s ease ${index * 0.1}s`;
+    }s, transform 50ms ease ${index * 0.1}s`;
     observer.observe(element);
   });
 
-// Form field focus animations
-document.querySelectorAll("input, select, textarea").forEach((field) => {
-  field.addEventListener("focus", function () {
-    this.parentElement.classList.add("transform", "scale-105");
-  });
 
-  field.addEventListener("blur", function () {
-    this.parentElement.classList.remove("transform", "scale-105");
-  });
-});
 
 // Hero Slider Functionality
 class HeroSlider {
@@ -298,7 +289,7 @@ document.querySelectorAll(".grid > div").forEach((card, index) => {
   card.style.transform = "translateY(20px)";
   card.style.transition = `opacity 0.6s ease ${
     index * 0.1
-  }s, transform 0.6s ease ${index * 0.1}s`;
+  }s, transform 50ms ease ${index * 0.1}s`;
   observer2.observe(card);
 });
 

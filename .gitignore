@@ -1,0 +1,23 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Tailwind output (optional to ignore)
+dist/*.css.map
+dist/*.css   # <-- ignore if you rebuild CSS during deployment (recommended)
+!dist/       # keep the dist folder structure
+
+# OS/System
+.DS_Store
+Thumbs.db
+
+# VSCode or IDEs
+.vscode/
+.idea/
+*.swp
+
+not-included-page-partner.html
+custom.html
