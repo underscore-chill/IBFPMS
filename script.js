@@ -1,3 +1,18 @@
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  const content = document.getElementsByClassName("main-content");
+
+  // Fade out the loader
+  loader.classList.add("opacity-0", "transition-opacity", "duration-500");
+
+  // After transition, hide loader completely and reveal content
+  setTimeout(() => {
+    loader.classList.add("hidden");
+    content.classList?.remove("opacity-0");
+    content.classList?.add("transition-opacity", "duration-500", "opacity-100");
+  }, 500);
+});
+
 window.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll(".nav-link");
   const currentPage = window.location.pathname.split("/").pop(); // Get current file name
@@ -81,34 +96,32 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Add scroll animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
-};
+// // Add scroll animations
+// const observerOptions = {
+//   threshold: 0.1,
+//   rootMargin: "0px 0px -50px 0px",
+// };
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = "1";
-      entry.target.style.transform = "translateY(0)";
-    }
-  });
-}, observerOptions);
+// const observer = new IntersectionObserver((entries) => {
+//   entries.forEach((entry) => {
+//     if (entry.isIntersecting) {
+//       entry.target.style.opacity = "1";
+//       entry.target.style.transform = "translateY(0)";
+//     }
+//   });
+// }, observerOptions);
 
-// Apply animation to cards and sections
-document
-  .querySelectorAll(".grid > div, section > div")
-  .forEach((element, index) => {
-    element.style.opacity = "0";
-    element.style.transform = "translateY(30px)";
-    element.style.transition = `opacity 0.8s ease ${
-      index * 0.1
-    }s, transform 50ms ease ${index * 0.1}s`;
-    observer.observe(element);
-  });
-
-
+// // Apply animation to cards and sections
+// document
+//   .querySelectorAll(".grid > div, section > div")
+//   .forEach((element, index) => {
+//     element.style.opacity = "0";
+//     element.style.transform = "translateY(30px)";
+//     element.style.transition = `opacity 0.1s ease ${
+//       index * 0.1
+//     }s, transform 50ms ease ${index * 0.1}s`;
+//     observer.observe(element);
+//   });
 
 // Hero Slider Functionality
 class HeroSlider {
@@ -268,30 +281,30 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Animate service cards on scroll
-const observerOptions2 = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
-};
+// // Animate service cards on scroll
+// const observerOptions2 = {
+//   threshold: 0.1,
+//   rootMargin: "0px 0px -50px 0px",
+// };
 
-const observer2 = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = "1";
-      entry.target.style.transform = "translateY(0)";
-    }
-  });
-}, observerOptions2);
+// const observer2 = new IntersectionObserver((entries) => {
+//   entries.forEach((entry) => {
+//     if (entry.isIntersecting) {
+//       entry.target.style.opacity = "1";
+//       entry.target.style.transform = "translateY(0)";
+//     }
+//   });
+// }, observerOptions2);
 
-// Apply animation to service cards
-document.querySelectorAll(".grid > div").forEach((card, index) => {
-  card.style.opacity = "0";
-  card.style.transform = "translateY(20px)";
-  card.style.transition = `opacity 0.6s ease ${
-    index * 0.1
-  }s, transform 50ms ease ${index * 0.1}s`;
-  observer2.observe(card);
-});
+// // Apply animation to service cards
+// document.querySelectorAll(".grid > div").forEach((card, index) => {
+//   card.style.opacity = "0";
+//   card.style.transform = "translateY(20px)";
+//   card.style.transition = `opacity 0.1s ease ${
+//     index * 0.1
+//   }s, transform 50ms ease ${index * 0.1}s`;
+//   observer2.observe(card);
+// });
 
 // Contact form submission
 

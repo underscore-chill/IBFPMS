@@ -48,6 +48,17 @@
 
   </head>
   <body class="bg-white relative">
+     <!-- Loading Overlay -->
+     <div
+     id="loader"
+     class="fixed inset-0 bg-white z-50 flex items-center justify-center"
+   >
+     <div
+       class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"
+     ></div>
+   </div>
+
+   <main class="main-content">
     <img src="assets/bg-layer.png" class="absolute left-[-4] top-3" />
 
     <div class="w-[95vw] lg:w-[95vw] m-auto">
@@ -710,8 +721,14 @@
           </div>
         </footer>
       </section>
-
-    <script src="./script.js"></script>
+</main>
+        <script src="./script.js"></script>
+    <script src="email.js"></script>
+<script>
+  (function () {
+    emailjs.init('YOUR_PUBLIC_KEY');
+  })();
+</script>
 
   </body>
 </html>
