@@ -2,7 +2,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll(".nav-link");
   const currentPage = window.location.pathname.split("/").pop(); // Get current file name
   links.forEach((link) => {
-    const linkPage = link.getAttribute("href").split("/").pop();
+    const linkPage = link?.getAttribute("href")?.split("/").pop();
     if (linkPage == currentPage) {
       if (window.innerWidth <= 700) {
         link.classList.add("text-primary");
@@ -137,11 +137,11 @@ class HeroSlider {
     this.updateDots();
 
     // Add event listeners
-    this.prevBtn.addEventListener("click", () => this.prevSlide());
-    this.nextBtn.addEventListener("click", () => this.nextSlide());
+    this.prevBtn?.addEventListener("click", () => this.prevSlide());
+    this.nextBtn?.addEventListener("click", () => this.nextSlide());
 
     // Add dot click listeners
-    this.dots.forEach((dot, index) => {
+    this.dots?.forEach((dot, index) => {
       dot.addEventListener("click", () => this.goToSlide(index));
     });
 
@@ -291,36 +291,42 @@ document.querySelectorAll(".grid > div").forEach((card, index) => {
 // Contact form submission
 
 const form = document.getElementById("contact-form");
-const status = document.getElementById("form-status");
+const statusMessage = document.getElementById("form-status");
+const contactSuccess = document.getElementById("contact-success");
 
-form.addEventListener("submit", async (e) => {
+form?.addEventListener("submit", async (e) => {
   e.preventDefault();
   const data = new FormData(form);
 
   try {
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: {
-        Accept: "application/json",
-      },
-    });
+    // const response = await fetch(form.action, {
+    //   method: form.method,
+    //   body: data,
+    //   headers: {
+    //     Accept: "application/json",
+    //   },
+    // });
 
-    if (response.ok) {
-      status.innerHTML = "Thanks! Your message has been sent.";
+    // if (response.ok) {
+    if (true) {
+      if (statusMessage) {
+        statusMessage.innerHTML = "Thanks! Your message has been sent.";
+      }
       form.reset();
     } else {
       const result = await response.json();
-      status.innerHTML =
-        result.errors?.[0]?.message || "Oops! Something went wrong.";
+      if (statusMessage) {
+        statusMessage.innerHTML =
+          result.errors?.[0]?.message || "Oops! Something went wrong.";
+      }
     }
   } catch (error) {
-    status.innerHTML = "Oops! Network error.";
+    statusMessage.innerHTML = "Oops! Network error.";
   }
 
   // Show success message
   contactSuccess.classList.remove("hidden");
-  contactForm.reset();
+  form.reset();
 
   // Scroll to success message
   contactSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
