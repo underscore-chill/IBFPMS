@@ -8,11 +8,10 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: red;
 }
 
-
-#mobile-menu{
-  background-color: #ffffff;
-  z-index: 50;
+#mobile-menu {
+  background-color: red;
+  z-index: 999;
 }
-

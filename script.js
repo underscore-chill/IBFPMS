@@ -211,12 +211,26 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Mobile menu toggle
-const mobileMenuButton = document.getElementById("mobile-menu-button");
-const mobileMenu = document.getElementById("mobile-menu");
+const menuToggle = document.getElementById("menuToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("overlay");
 
-mobileMenuButton.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden");
+menuToggle.addEventListener("click", () => {
+  mobileMenu.classList.toggle("-translate-x-full");
+  overlay.classList.toggle("hidden");
 });
+
+overlay.addEventListener("click", () => {
+  mobileMenu.classList.add("-translate-x-full");
+  overlay.classList.add("hidden");
+});
+
+// const mobileMenuButton = document.getElementById("mobile-menu-button");
+// const mobileMenu = document.getElementById("mobile-menu");
+
+// mobileMenuButton.addEventListener("click", () => {
+//   mobileMenu.classList.toggle("hidden");
+// });
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
