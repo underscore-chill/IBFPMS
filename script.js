@@ -46,10 +46,12 @@ window.addEventListener("DOMContentLoaded", () => {
 // Form submission handling
 const careerForm = document.getElementById("career-form");
 const formSuccess = document.getElementById("form-success");
+const formStatus = document.getElementById("form-status");
+const submitBtn = document.getElementById("career-submit-btn");
 
 careerForm?.addEventListener("submit", function (e) {
   e.preventDefault();
-
+  submitBtn.innerText = "Sending...";
   // Validate form
   const formData = new FormData(careerForm);
   const resume = formData.get("resume");
@@ -59,19 +61,100 @@ careerForm?.addEventListener("submit", function (e) {
     alert("Please upload a PDF file for your resume.");
     return;
   }
+  const resumeUrl = "";
+  emailjs
+    .send("service_b1ay5nb", "template_sufx2kk", {
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      employed: formData.get("employed"),
+      jobType: formData.get("jobType"),
+      message: formData.get("message"),
+      resume: resumeUrl,
+    })
+    .then((res) => {
+      if (res.status == 200) {
+        careerForm.reset();
 
-  // Show success message
-  formSuccess.classList.remove("hidden");
-  careerForm.reset();
+        formSuccess.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
 
-  // Scroll to success message
-  formSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
+        formSuccess.innerHTML = "Thanks! Your message has been sent.";
+        formSuccess.classList.remove("hidden");
+        submitBtn.innerText = "Submit";
+      } else {
+        formStatus.innerHTML = "Opp! something went wrong please try again.";
+        formStatus.classList.remove("hidden");
+        submitBtn.innerText = "Submit";
+      }
+    })
+    .catch((err) => {
+      console.error("FAILED", err);
+      submitBtn.innerText = "Submit";
+
+      formStatus.innerHTML = "Oops! Something went wrong.";
+      formStatus.classList.remove("hidden");
+    });
 
   // Hide success message after 10 seconds
   setTimeout(() => {
     formSuccess.classList.add("hidden");
+
+    formStatus.classList.add("hidden");
   }, 10000);
 });
+
+const form = document.getElementById("contact-form");
+const statusMessage = document.getElementById("form-status");
+const contactSuccess = document.getElementById("contact-success");
+const contactFormBtn = document.getElementById("contact-form-btn");
+
+form?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  contactFormBtn.innerText = "Sending...";
+  emailjs
+    .sendForm("service_b1ay5nb", "template_h3ep0k4", form)
+    .then((res) => {
+      console.log(res);
+      if (res.status == 200) {
+        form.reset();
+
+        contactSuccess.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        contactFormBtn.innerText = "Send Message";
+        contactSuccess.innerHTML = "Thanks! Your message has been sent.";
+        contactSuccess.classList.remove("hidden");
+      } else {
+        contactFormBtn.innerText = "Send Message";
+
+        statusMessage.innerHTML = "Opp! something went wrong please try again.";
+        statusMessage.classList.remove("hidden");
+      }
+    })
+    .catch((err) => {
+      console.error("FAILED", err);
+      contactFormBtn.innerText = "Send Message";
+
+      statusMessage.innerHTML = "Oops! Something went wrong.";
+      statusMessage.classList.remove("hidden");
+    });
+
+  // Hide success message after 10 seconds
+  setTimeout(() => {
+    contactSuccess.classList.add("hidden");
+    statusMessage.classList.add("hidden");
+  }, 10000);
+});
+
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
 
 // File upload validation
 const resumeInput = document.getElementById("resume");
@@ -80,6 +163,12 @@ resumeInput?.addEventListener("change", function (e) {
   if (file && file.type !== "application/pdf") {
     alert("Please select a PDF file only.");
     e.target.value = "";
+  }
+
+  const maxSize = 50 * 1024 * 1024; // 50mb
+  if (file && file.size > maxSize) {
+    alert("File size must be 50KB or less.");
+    this.value = ""; // Clear the invalid file
   }
 });
 
@@ -307,55 +396,3 @@ window.addEventListener("scroll", () => {
 // });
 
 // Contact form submission
-
-const form = document.getElementById("contact-form");
-const statusMessage = document.getElementById("form-status");
-const contactSuccess = document.getElementById("contact-success");
-
-form?.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const data = new FormData(form);
-
-  try {
-    // const response = await fetch(form.action, {
-    //   method: form.method,
-    //   body: data,
-    //   headers: {
-    //     Accept: "application/json",
-    //   },
-    // });
-
-    // if (response.ok) {
-    if (true) {
-      if (statusMessage) {
-        statusMessage.innerHTML = "Thanks! Your message has been sent.";
-      }
-      form.reset();
-    } else {
-      const result = await response.json();
-      if (statusMessage) {
-        statusMessage.innerHTML =
-          result.errors?.[0]?.message || "Oops! Something went wrong.";
-      }
-    }
-  } catch (error) {
-    statusMessage.innerHTML = "Oops! Network error.";
-  }
-
-  // Show success message
-  contactSuccess.classList.remove("hidden");
-  form.reset();
-
-  // Scroll to success message
-  contactSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
-
-  // Hide success message after 10 seconds
-  setTimeout(() => {
-    contactSuccess.classList.add("hidden");
-  }, 10000);
-});
-
-function isValidEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}

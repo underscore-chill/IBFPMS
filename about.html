@@ -384,23 +384,6 @@
                       ></textarea>
                     </div>
 
-                    <div class="flex items-center">
-                      <input
-                        type="checkbox"
-                        id="consent"
-                        name="consent"
-                        required
-                        class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
-                      />
-                      <label
-                        for="consent"
-                        class="ml-2 block text-sm text-gray-700"
-                      >
-                        I agree to receive communications about property
-                        management services
-                      </label>
-                    </div>
-
                     <button
                       type="submit"
                       class="w-full bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-transparent hover:text-black border-2 border-primary transition-colors focus:outline-none focus:ring-4 focus:ring-primary focus:ring-opacity-50"
@@ -412,6 +395,29 @@
                   <!-- Success Message -->
                   <div
                     id="contact-success"
+                    class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-lg"
+                  >
+                    <div class="flex items-center">
+                      <svg
+                        class="w-5 h-5 text-green-500 mr-2"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span class="text-green-700 font-medium"
+                        >Thank you! Your message has been sent successfully.
+                        We'll get back to you within 24 hours.</span
+                      >
+                    </div>
+                  </div>
+
+                  <div
+                    id="form-status"
                     class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-lg"
                   >
                     <div class="flex items-center">
@@ -661,7 +667,7 @@
     <script>
       (function () {
         emailjs.init({
-          publicKey: "YOUR_PUBLIC_KEY",
+          publicKey: "CMVI5elZQNxHW2BEF",
         });
       })();
     </script>

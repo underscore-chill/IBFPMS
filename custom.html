@@ -1,37 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IBF Property Management</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-      @theme {
-        --color-primary: #2A5393;
-        --color-white: #FFFFFF;
-        --color-black: #000000;
-      }
-    </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Contact Form Submission</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    "
+  >
+    <table
+      role="presentation"
+      cellspacing="0"
+      cellpadding="0"
+      border="0"
+      width="100%"
+      style="background-color: #f5f5f5"
+    >
+      <tr>
+        <td style="padding: 20px 0">
+          <table
+            role="presentation"
+            cellspacing="0"
+            cellpadding="0"
+            border="0"
+            width="600"
+            style="
+              margin: 0 auto;
+              background-color: #ffffff;
+              border-radius: 8px;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <!-- Header -->
+            <tr>
+              <td
+                style="
+                  padding: 30px 40px;
+                  text-align: center;
+                  background-color: #2563eb;
+                  border-radius: 8px 8px 0 0;
+                "
+              >
+                <h1
+                  style="
+                    margin: 0;
+                    color: #ffffff;
+                    font-size: 24px;
+                    font-weight: bold;
+                  "
+                >
+                  New Contact Form Submission
+                </h1>
+                <p style="margin: 8px 0 0 0; color: #e0e7ff; font-size: 16px">
+                  Property Management Inquiry
+                </p>
+              </td>
+            </tr>
 
-</head>
-</head>
-<body class="bg-white">
-  <header class="w-full h-auto">
-    <nav class="bg-white border-2 h-20 w-full flex items-center justify-between px-8">
-        <div class="logo">
-            <img src="assets/logo.png" class="object-fit" srcset="">
-        </div>
+            <!-- Timestamp -->
+            <tr>
+              <td
+                style="
+                  padding: 20px 40px;
+                  text-align: center;
+                  background-color: #f8fafc;
+                  border-bottom: 1px solid #e2e8f0;
+                "
+              >
+                <p style="margin: 0; color: #64748b; font-size: 14px">
+                  Received on <strong>January 28, 2025 at 3:03 AM</strong>
+                </p>
+              </td>
+            </tr>
 
-        <ul class="flex items-center justify-evenly">
-            <li>Home</li>
-            <li>About</li>
-            <li>Property Management</li>
-            <li>Partner</li>
-            <li>Contact US</li>
-        </ul>
+            <!-- Contact Information Section -->
+            <tr>
+              <td style="padding: 30px 40px">
+                <h2
+                  style="
+                    margin: 0 0 20px 0;
+                    color: #1e293b;
+                    font-size: 18px;
+                    font-weight: bold;
+                    border-bottom: 2px solid #2563eb;
+                    padding-bottom: 8px;
+                  "
+                >
+                  👤 Contact Information
+                </h2>
 
-    </nav>
-  </header>  
-</body>
+                <!-- Name Row -->
+                <table
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  width="100%"
+                  style="margin-bottom: 20px"
+                >
+                  <tr>
+                    <td width="50%" style="padding-right: 10px">
+                      <p
+                        style="
+                          margin: 0 0 5px 0;
+                          color: #64748b;
+                          font-size: 14px;
+                          font-weight: bold;
+                        "
+                      >
+                        First Name
+                      </p>
+                      <p
+                        style="
+                          margin: 0;
+                          color: #1e293b;
+                          font-size: 16px;
+                          font-weight: 600;
+                        "
+                      >
+                        John
+                      </p>
+                    </td>
+                    <td width="50%" style="padding-left: 10px">
+                      <p
+                        style="
+                          margin: 0 0 5px 0;
+                          color: #64748b;
+                          font-size: 14px;
+                          font-weight: bold;
+                        "
+                      >
+                        Last Name
+                      </p>
+                      <p
+                        style="
+                          margin: 0;
+                          color: #1e293b;
+                          font-size: 16px;
+                          font-weight: 600;
+                        "
+                      >
+                        Smith
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Email -->
+                <table
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  width="100%"
+                  style="margin-bottom: 15px"
+                >
+                  <tr>
+                    <td
+                      style="
+                        padding: 15px;
+                        background-color: #f1f5f9;
+                        border-radius: 6px;
+                        border-left: 4px solid #2563eb;
+                      "
+                    >
+                      <p
+                        style="
+                          margin: 0 0 5px 0;
+                          color: #64748b;
+                          font-size: 14px;
+                          font-weight: bold;
+                        "
+                      >
+                        📧 Email Address
+                      </p>
+                      <a
+                        href="mailto:john.smith@email.com"
+                        style="
+                          margin: 0;
+                          color: #2563eb;
+                          font-size: 16px;
+                          font-weight: 600;
+                          text-decoration: none;
+                        "
+                        >john.smith@email.com</a
+                      >
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Phone -->
+                <table
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  width="100%"
+                  style="margin-bottom: 20px"
+                >
+                  <tr>
+                    <td
+                      style="
+                        padding: 15px;
+                        background-color: #f1f5f9;
+                        border-radius: 6px;
+                        border-left: 4px solid #059669;
+                      "
+                    >
+                      <p
+                        style="
+                          margin: 0 0 5px 0;
+                          color: #64748b;
+                          font-size: 14px;
+                          font-weight: bold;
+                        "
+                      >
+                        📞 Phone Number
+                      </p>
+                      <a
+                        href="tel:+15551234567"
+                        style="
+                          margin: 0;
+                          color: #059669;
+                          font-size: 16px;
+                          font-weight: 600;
+                          text-decoration: none;
+                        "
+                        >(555) 123-4567</a
+                      >
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Property Information Section -->
+            <tr>
+              <td style="padding: 0 40px 30px 40px">
+                <h2
+                  style="
+                    margin: 0 0 20px 0;
+                    color: #1e293b;
+                    font-size: 18px;
+                    font-weight: bold;
+                    border-bottom: 2px solid #059669;
+                    padding-bottom: 8px;
+                  "
+                >
+                  🏢 Property Information
+                </h2>
+
+                <table
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  width="100%"
+                >
+                  <tr>
+                    <td>
+                      <p
+                        style="
+                          margin: 0 0 8px 0;
+                          color: #64748b;
+                          font-size: 14px;
+                          font-weight: bold;
+                        "
+                      >
+                        Property Type
+                      </p>
+                      <span
+                        style="
+                          display: inline-block;
+                          padding: 6px 12px;
+                          background-color: #dcfce7;
+                          color: #166534;
+                          font-size: 14px;
+                          font-weight: 600;
+                          border-radius: 20px;
+                          border: 1px solid #bbf7d0;
+                        "
+                      >
+                        Residential
+                      </span>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Message Section -->
+            <tr>
+              <td style="padding: 0 40px 30px 40px">
+                <h2
+                  style="
+                    margin: 0 0 20px 0;
+                    color: #1e293b;
+                    font-size: 18px;
+                    font-weight: bold;
+                    border-bottom: 2px solid #7c3aed;
+                    padding-bottom: 8px;
+                  "
+                >
+                  💬 Message
+                </h2>
+
+                <table
+                  role="presentation"
+                  cellspacing="0"
+                  cellpadding="0"
+                  border="0"
+                  width="100%"
+                >
+                  <tr>
+                    <td
+                      style="
+                        padding: 20px;
+                        background-color: #faf5ff;
+                        border-radius: 8px;
+                        border-left: 4px solid #7c3aed;
+                      "
+                    >
+                      <p
+                        style="
+                          margin: 0;
+                          color: #1e293b;
+                          font-size: 15px;
+                          line-height: 1.6;
+                        "
+                      >
+                        I'm interested in property management services for my
+                        3-bedroom rental property in downtown. I need help with
+                        tenant screening, rent collection, and maintenance
+                        coordination. Please contact me to discuss your services
+                        and pricing.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td
+                style="
+                  padding: 20px 40px;
+                  text-align: center;
+                  background-color: #f8fafc;
+                  border-radius: 0 0 8px 8px;
+                  border-top: 1px solid #e2e8f0;
+                "
+              >
+                <p style="margin: 0; color: #64748b; font-size: 12px">
+                  This email was sent from your website contact form.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>
