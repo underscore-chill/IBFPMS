@@ -60,16 +60,17 @@
     <main class="main-content">
       <img src="assets/bg-layer.png" class="absolute left-[-4] top-3" />
 
-      <div class="w-[95vw] lg:w-[95vw] m-auto">
+      <div class="m-auto">
         <!-- Header -->
-        <header class="bg-white shadow-sm py-4">
+
+        <header class="fixed w-full top-0 z-[999] shadow-sm py-4">
           <nav class="w-full mx-auto">
             <div class="flex justify-between items-center h-16">
               <!-- Logo -->
               <a href="index.html" class="cursor-pointer z-10 h-fit w-fit">
                 <img
                   class="object-contain"
-                  src="assets/logo.png"
+                  src="assets/light-logo.png"
                   alt="IBF Property Management"
                 />
               </a>
@@ -79,25 +80,25 @@
                 <div class="ml-10 flex items-baseline space-x-8">
                   <a
                     href="index.html"
-                    class="nav-link bg-transparent text-black px-6 py-4 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors"
+                    class="nav-link nav-link bg-transparent text-white px-6 py-4 rounded-full text-sm font-medium hover:bg-primary transition-colors"
                     >Home</a
                   >
                   <a
                     href="about.html"
-                    class="nav-link bg-transparent text-black px-6 py-4 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors"
+                    class="nav-link nav-link bg-transparent text-white px-6 py-4 rounded-full text-sm font-medium hover:bg-primary transition-colors"
                     >About</a
                   >
                   <a
                     href="property-management.html"
-                    class="nav-link bg-transparent text-black px-6 py-4 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors"
-                    >Propert Managment</a
+                    class="nav-link nav-link bg-transparent text-white px-6 py-4 rounded-full text-sm font-medium hover:bg-primary transition-colors"
+                    >Property Management</a
                   >
 
                   <a
                     href="joinus.html"
-                    class="nav-link bg-transparent text-black px-6 py-4 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors"
-                    >Join Us</a
-                  >
+                    class="nav-link nav-link bg-transparent text-white px-6 py-4 rounded-full text-sm font-medium hover:bg-primary transition-colors"
+                    >Join Us
+                  </a>
                 </div>
               </div>
 
@@ -105,7 +106,7 @@
               <div class="hidden md:block">
                 <a
                   href="contact.html"
-                  class="bg-primary border-2 border-primary text-white px-6 py-4 rounded-full text-sm font-medium hover:bg-transparent hover:text-black transition-colors"
+                  class="bg-primary border-2 border-text text-white px-6 py-4 rounded-full text-sm font-medium hover:bg-transparent hover:text-black transition-colors"
                 >
                   Contact Us
                 </a>
@@ -117,8 +118,8 @@
                   <!-- Hamburger Icon -->
                   <svg
                     class="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
+                    fill="#fff"
+                    stroke="#fff"
                     stroke-width="2"
                     viewBox="0 0 24 24"
                     stroke-linecap="round"
@@ -158,7 +159,7 @@
                 <a
                   href="property-management.html"
                   class="nav-link hover:text-primary"
-                  >Property Managment</a
+                  >Property Management</a
                 >
               </li>
 
@@ -167,7 +168,6 @@
                   >Contact Us</a
                 >
               </li>
-
               <li>
                 <a href="joinus.html" class="nav-link hover:text-primary"
                   >Join Us</a
@@ -179,17 +179,15 @@
 
         <!-- Hero Section with Slider -->
         <section
-          class="relative h-[80vh] flex items-center justify-center overflow-hidden"
+          class="relative h-[95vh] flex items-center justify-center overflow-hidden"
         >
           <!-- Slider Container -->
           <div id="hero-slider" class="absolute inset-0">
             <!-- Slide 1 -->
             <div class="slider-slide absolute inset-0">
+              <div class="absolute bg-black inset-0 z-10 opacity-50"></div>
               <div
-                class="absolute bg-black rounded-[1.5rem] inset-0 z-10 opacity-50"
-              ></div>
-              <div
-                class="absolute inset-0 bg-cover rounded-[1.5rem] bg-center"
+                class="absolute inset-0 bg-cover bg-center"
                 style="background-image: url('assets/joinus.jpg')"
               ></div>
             </div>
