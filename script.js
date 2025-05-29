@@ -1,4 +1,4 @@
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
   const loader = document.getElementById("loader");
   const content = document.getElementsByClassName("main-content");
 
