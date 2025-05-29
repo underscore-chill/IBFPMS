@@ -49,9 +49,10 @@
   </head>
   <body class="bg-white relative">
      <!-- Loading Overlay -->
+
      <div
      id="loader"
-     class="fixed inset-0 bg-white z-50 flex items-center justify-center"
+     class="fixed inset-0 w-screen h-screen bg-white z-[1000] flex items-center justify-center"
    >
      <div
        class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"
@@ -63,7 +64,7 @@
 
     <div class="m-auto">
       <!-- Header -->
-      <header class="fixed w-full top-0 z-[999] shadow-sm py-4">
+        <header class="fixed w-full top-0 z-[999] shadow-sm py-4 px-4">
         <nav class="w-full mx-auto">
           <div class="flex justify-between items-center h-16">
             <!-- Logo -->
@@ -395,28 +396,28 @@
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label
-                        for="first-name"
+                        for="firstName"
                         class="block text-sm font-medium text-gray-700 mb-2"
                         >First Name</label
                       >
                       <input
                         type="text"
-                        id="first-name"
-                        name="first-name"
+                        id="firstName"
+                        name="firstName"
                         required
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                       />
                     </div>
                     <div>
                       <label
-                        for="last-name"
+                        for="lastName"
                         class="block text-sm font-medium text-gray-700 mb-2"
                         >Last Name</label
                       >
                       <input
                         type="text"
-                        id="last-name"
-                        name="last-name"
+                        id="lastName"
+                        name="lastName"
                         required
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                       />
@@ -454,13 +455,13 @@
 
                   <div>
                     <label
-                      for="property-type"
+                      for="propertyType"
                       class="block text-sm font-medium text-gray-700 mb-2"
                       >Property Type</label
                     >
                     <select
-                      id="property-type"
-                      name="property-type"
+                      id="propertyType"
+                      name="propertyType"
                       required
                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                     >
@@ -489,22 +490,7 @@
                     ></textarea>
                   </div>
 
-                  <div class="flex items-center">
-                    <input
-                      type="checkbox"
-                      id="consent"
-                      name="consent"
-                      required
-                      class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
-                    />
-                    <label
-                      for="consent"
-                      class="ml-2 block text-sm text-gray-700"
-                    >
-                      I agree to receive communications about property
-                      management services
-                    </label>
-                  </div>
+      
 
                   <button
                     type="submit"
@@ -684,12 +670,17 @@
                 >
               </div>
 
-              <!-- Address -->
+              <!-- Contact -->
               <div class="text-center lg:text-left">
+                
                 <p class="text-gray-300 text-sm">
                   Address: 301 N Central Park Ave, Chicago, IL 60624
                 </p>
-              </div>
+                <p class="text-gray-300 text-sm">
+                  Email: Ayman@IBFPropertyMgmt.com
+                </p>
+                <p class="text-gray-300 text-sm">Phone: (888) 642-8117</p>
+            </div>
 
               <!-- Social Media Icons -->
               <div class="flex space-x-4">
@@ -764,7 +755,7 @@
     <script src="email.js"></script>
 <script>
   (function () {
-    emailjs.init('YOUR_PUBLIC_KEY');
+    emailjs.init('BFHwQZZBzgkOoubTo');
   })();
 </script>
 

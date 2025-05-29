@@ -15,7 +15,6 @@ window.addEventListener("load", () => {
 
 window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
-  console.log(window.scrollY);
   if (window.scrollY > 400) {
     header.classList.add("bg-light-black");
   } else {
