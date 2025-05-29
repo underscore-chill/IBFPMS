@@ -60,16 +60,16 @@
     <main class="main-content">
       <img src="assets/bg-layer.png" class="absolute left-[-4] top-3" />
 
-      <div class="w-[95vw] lg:w-[95vw] m-auto">
+      <div class="w-full m-auto">
         <!-- Header -->
-        <header class="bg-white shadow-sm py-4">
+        <header class="fixed w-full top-0 z-[999] shadow-sm py-4">
           <nav class="w-full mx-auto">
             <div class="flex justify-between items-center h-16">
               <!-- Logo -->
               <a href="index.html" class="cursor-pointer z-10 h-fit w-fit">
                 <img
                   class="object-contain"
-                  src="assets/logo.png"
+                  src="assets/light-logo.png"
                   alt="IBF Property Management"
                 />
               </a>
@@ -79,7 +79,7 @@
                 <div class="ml-10 flex items-baseline space-x-8">
                   <a
                     href="index.html"
-                    class="nav-link nav-link bg-transparent text-black px-6 py-4 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors"
+                    class="nav-link nav-link bg-transparent text-white px-6 py-4 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors"
                     >Home</a
                   >
                   <a
@@ -178,7 +178,7 @@
 
         <!-- Hero Section with Slider -->
         <section
-          class="relative h-[80vh] flex items-center justify-center overflow-hidden"
+          class="relative h-[95vh] flex items-center justify-center overflow-hidden"
         >
           <!-- Slider Container -->
           <div id="hero-slider" class="absolute inset-0">
@@ -199,11 +199,9 @@
             <div
               class="slider-slide absolute inset-0 pacity-0 transition-opacity duration-1000"
             >
+              <div class="absolute bg-black z-10 inset-0 opacity-50"></div>
               <div
-                class="absolute bg-black z-10 rounded-[1.5rem] inset-0 opacity-50"
-              ></div>
-              <div
-                class="absolute inset-0 bg-cover rounded-[1.5rem] bg-center"
+                class="absolute inset-0 bg-cover bg-center"
                 style="
                   background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80');
                 "
@@ -767,7 +765,7 @@
                     </div>
 
                     <button
-                    id="contact-form-btn"
+                      id="contact-form-btn"
                       type="submit"
                       class="w-full bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-transparent hover:text-black border-2 border-primary transition-colors focus:outline-none focus:ring-4 focus:ring-primary focus:ring-opacity-50"
                     >
@@ -1049,7 +1047,7 @@
     <script>
       (function () {
         emailjs.init({
-          publicKey: "CMVI5elZQNxHW2BEF",
+          publicKey: "BFHwQZZBzgkOoubTo",
         });
       })();
     </script>
