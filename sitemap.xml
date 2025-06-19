@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Homepage - highest priority, updated daily -->
+  <url>
+    <loc>https://ibfpropertymgmt.com/</loc>
+    <lastmod>2025-06-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Property Management - main service page, updated daily -->
+  <url>
+    <loc>https://ibfpropertymgmt.com/property-management</loc>
+    <lastmod>2025-06-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- About page - updated daily -->
+  <url>
+    <loc>https://ibfpropertymgmt.com/about</loc>
+    <lastmod>2025-06-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Contact page - critical for Chicago local SEO -->
+  <url>
+    <loc>https://ibfpropertymgmt.com/contact</loc>
+    <lastmod>2025-06-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Join Us page - updated daily -->
+  <url>
+    <loc>https://ibfpropertymgmt.com/joinus</loc>
+    <lastmod>2025-06-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Privacy Policy - lower priority but still indexed -->
+  <url>
+    <loc>https://ibfpropertymgmt.com/privacy-policy</loc>
+    <lastmod>2025-06-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+</urlset>
